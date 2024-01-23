@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:vf_shop/constants/colors.dart';
 import 'package:vf_shop/constants/image_strings.dart';
 import 'package:vf_shop/constants/text_strings.dart';
-import 'package:vf_shop/login_page/login.dart';
-import 'package:vf_shop/login_page/signup.dart';
+import 'package:vf_shop/widgets/login_page/login.dart';
+import 'package:vf_shop/widgets/login_page/signup.dart';
 
 class TabBarController extends StatefulWidget {
   const TabBarController({Key? key}) : super(key: key);
