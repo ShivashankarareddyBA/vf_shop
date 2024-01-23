@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vf_shop/constants/colors.dart';
-import 'package:vf_shop/constants/size.dart';
+import 'package:vf_shop/constants/image_strings.dart';
 import 'package:vf_shop/constants/text_strings.dart';
 import 'package:vf_shop/login_page/login.dart';
 import 'package:vf_shop/login_page/signup.dart';
@@ -15,49 +15,77 @@ class TabBarController extends StatefulWidget {
 class _TabBarControllerState extends State<TabBarController>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
-
   @override
   void initState() {
-    super.initState();
     tabController = TabController(length: 2, vsync: this);
+    super.initState();
+
+    tabController.addListener(() {
+      if (!mounted) return;
+      setState(() {});
+    });
   }
 
   @override
   void dispose() {
-    tabController.dispose();
     super.dispose();
+    tabController.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    const double tabTextSize = 20;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          title,
-          style: TextStyle(color: titleColor),
-        ),
-        bottom: TabBar(
-            controller: tabController,
-            tabs: const [
-              Tab(
-                text: 'Login',
-              ),
-              Tab(text: 'Sign Up'),
-            ],
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicatorColor: titleColor,
-            labelStyle:
-                const TextStyle(fontSize: tabTextSize, color: titleColor)),
-      ),
-      body: TabBarView(
-        controller: tabController,
-        children: const [
-          // Add your content for Tab 1
-          Login(),
-
-          // Add your content for Tab 2
-          SignUp(),
+      body: Column(
+        children: [
+          Container(
+            width: 450,
+            height: 489.5,
+            padding: const EdgeInsets.only(left: 0, right: 0),
+            child: const Row(
+              children: [
+                Image(image: AssetImage(loginimg)),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            width: 400,
+            height: 50,
+            child: TabBar(
+                labelColor: Colors.red,
+                unselectedLabelColor: Colors.black,
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: btncolor,
+                ),
+                indicatorSize: TabBarIndicatorSize.tab,
+                indicatorWeight: 6,
+                controller: tabController,
+                tabs: const [
+                  Text(
+                    bt1,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    bt2,
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ]),
+          ),
+          Expanded(
+            child: TabBarView(
+              controller: tabController,
+              children: const [Login(), SignUp()],
+            ),
+          ),
         ],
       ),
     );

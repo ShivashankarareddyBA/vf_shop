@@ -1,3 +1,10 @@
 const String splashTop = "assets/images/logo.png";
 const String splashImage = "assets/images/2t.jpg";
-//const String smile = "assets/images/smile.JPG";
+const String beans = "assets/images/beans.png";
+const String bitterGround = "assets/images/bitter-ground.png";
+const String capsicum = "assets/images/capsicum.png";
+const String cucumbar = "assets/images/cucumbar.png";
+const String spinch = "assets/images/spinach.png";
+const String leiani = "assets/images/leilani-angle.png";
+const String regimg = "assets/images/regimg.png";
+const String loginimg = "assets/images/loginimg.png";
