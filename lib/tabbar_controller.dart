@@ -35,15 +35,19 @@ class _TabBarControllerState extends State<TabBarController>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: (grey),
       body: Column(
         children: [
           Container(
-            width: 450,
-            height: 489.5,
-            padding: const EdgeInsets.only(left: 0, right: 0),
+            width: 400,
+            height: 200,
+            padding: const EdgeInsets.only(left: 10, right: 10),
             child: const Row(
+              //crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image(image: AssetImage(loginimg)),
+                //Image(image: AssetImage(regimg)),
+                Image(image: AssetImage(strawberry)),
               ],
             ),
           ),

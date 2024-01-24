@@ -28,7 +28,7 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // whenever looad  we need to call animation
+    // whenever load  we need to call animation
     SplashController.startAnimation();
     return Scaffold(
       backgroundColor: Colors.white,

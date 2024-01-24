@@ -8,3 +8,4 @@ const String spinch = "assets/images/spinach.png";
 const String leiani = "assets/images/leilani-angle.png";
 const String regimg = "assets/images/regimg.png";
 const String loginimg = "assets/images/loginimg.png";
+const String strawberry = "assets/images/strawberry.png";
